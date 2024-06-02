@@ -42,6 +42,8 @@ class Task extends Model
     {
         $tasks = self::getTasks();
         $task = array_filter($tasks, fn($task) => $task['id'] == $id);
+        $task = array_values($task);
+        $task = $task[0] ?? null;
 
         return $task;
     }

@@ -11,15 +11,15 @@ class TaskController extends Controller
     {
         $tasks = Task::getTasks();
 
-        return view('task.index', [
+        return view('dashboard.index', [
             'tasks' => $tasks
         ]);
     }
 
     public function show($id)
     {
-        $task = Task::getTaskById($id)[0];
-        return view('task.show', [
+        $task = Task::getTaskById($id);
+        return view('dashboard.show', [
             'task' => $task
         ]);
     }
