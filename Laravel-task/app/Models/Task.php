@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use HasFactory;
+    protected $table = 'task';
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
     protected static $tasks = [
         [
